@@ -7,6 +7,7 @@
 # NOTE: only positive integers will be tested.
 
 def sum_of_integers_in_string(s):
-    return sum(int(char) for char in s if char.isdigit())
+    return sum(map(int, ''.join(char if char.isdigit() else ' ' for char in s).split()))
+
 
 print(sum_of_integers_in_string("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"))

@@ -59,7 +59,7 @@ def is_interesting(number, awesome_phreses):
             is_awesome_phrases
             ]
     
-    return reduce(lambda fun, seq: seq(fun)), criteria, str(number)
+    return reduce(lambda x, y: y(x), criteria, str(number)
 
 def is_followed_by_0(num):
     return num[1:] == (len(num) - 1) * '0'
@@ -77,12 +77,11 @@ def is_palindrome(num):
     return num == num[::-1]
 
 def is_awesome_phrases(num, phrases):
-    for phrase in phrases:
-        if num is phrase:
-            return True
-    return False
-
-
+    # for phrase in phrases:
+    #     if num is phrase:
+    #         return True
+    # return False
+    return num == phrase for phrase in phrases
 
 
 
